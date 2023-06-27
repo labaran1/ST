@@ -32,11 +32,4 @@ export class AuthController {
   login(@Body() loginUserDto: LoginUserDto) {
     return this.authService.signIn(loginUserDto.email, loginUserDto.password);
   }
-
-  @UseGuards(AuthGuard)
-  @Get('me/:userName')
-  myDetails(@Param('userName') username: string, @Request() req) {
-    console.log(req.user);
-    return this.authService.myDetails(username, req);
-  }
 }

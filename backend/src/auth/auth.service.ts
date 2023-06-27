@@ -75,20 +75,4 @@ export class AuthService {
       }
     }
   }
-
-  async myDetails(username: string, req: any): Promise<any> {
-    try {
-      const doc = (
-        await this.UserModel.findOne({ username: username })
-      ).toObject();
-      if (req.user.email !== doc.email) {
-        throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
-      } else {
-        delete doc.password;
-        return doc;
-      }
-    } catch (error) {
-      throw new HttpException(error.response, error.status);
-    }
-  }
 }

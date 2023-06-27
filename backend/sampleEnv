@@ -1,0 +1,10 @@
+MONGO_URI=mongodb+srv://sample:WTK3edrACNs8fWsi2D@cluster0.za6l9k0.mongodb.net/test
+ACCESS_TOKEN_SECRET=adfadf
+ACCESS_TOKEN_EXPIRESIN=1000s
+REFRESH_TOKEN_EXPIRESIN=4000s
+REFRESH_TOKEN_SECRET=asdfasdf
+PORT=3000
+
+
+
+
