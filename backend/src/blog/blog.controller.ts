@@ -1,23 +1,21 @@
-import {
-  Controller,
-  Post,
-  Body,
-  Patch,
-  Delete,
-  Param,
-  Request,
-  UseGuards,
-  Get,
-  HttpCode,
-  HttpStatus,
-} from '@nestjs/common';
+import { Controller, Param, Get } from '@nestjs/common';
 import { BlogService } from './blog.service';
-import { AuthGuard } from 'src/auth/auth.guard';
-
-import { CreateBlogDto } from './dto/create-blog.dto';
-import { UpdateBlogDto } from './dto/update-blog.dto';
 
 @Controller('blogs')
 export class BlogController {
   constructor(private readonly blogService: BlogService) {}
+
+  @Get()
+  findAll() {
+    return this.blogService.findAll();
+  }
+
+  @Get(':username')
+  findByAuthor(@Param('username') username: string) {
+    return this.blogService.findByAuthor(username);
+  }
+  @Get(':username/:id')
+  findOne(@Param('id') id: string, @Param('username') username: string) {
+    return this.blogService.findOne(id, username);
+  }
 }
