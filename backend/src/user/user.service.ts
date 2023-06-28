@@ -173,19 +173,25 @@ export class UserService {
     }
   }
 
-  async myDetails(username: string, req: any): Promise<any> {
+  async myDetails(req: any): Promise<any> {
     try {
       const doc = (
-        await this.UserModel.findOne({ username: username })
+        await this.UserModel.findOne({ email: req.user.email })
       ).toObject();
-      if (req.user.email !== doc.email) {
-        throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
+      if (!doc) {
+        throw new HttpException('Not Found', HttpStatus.NOT_FOUND);
       } else {
         delete doc.password;
         return doc;
       }
     } catch (error) {
-      throw new HttpException(error.response, error.status);
+      if (error.response) {
+        throw new HttpException(error.response, error.status);
+      }
+      throw new HttpException(
+        'Something went Wrong',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 }

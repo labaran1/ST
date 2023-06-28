@@ -20,9 +20,9 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @UseGuards(AuthGuard)
-  @Get(':userName')
-  myDetails(@Param('userName') username: string, @Request() req) {
-    return this.userService.myDetails(username, req);
+  @Get()
+  myDetails(@Request() req) {
+    return this.userService.myDetails(req);
   }
 
   // to be  protected
