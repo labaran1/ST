@@ -1,9 +1,38 @@
-Backend Developer
+# 
 
-Challenge:
+### Task:
 
-Create an API for a blog that allows a user to create, view one, view all, update, delete posts.
-Push to github and reply to the email with a link to the github repo
-Deploy on any platform of your choice and share url. You can reply to this mail with the url.
-Users should be able to authenticate and do these actions on only posts they created.
-Add simple documentation on how to setup
+
+## Documentation
+Postman Documentation concerning the APIs for the project : https://documenter.getpostman.com/view/7161348/2s93z9cNvd#380f3f15-794e-4912-9a38-98dba3ca3550  <br>
+Sample Deployment on Railway.app : st-production.up.railway.app
+
+
+## Installation
+create .env and checkout sampleEnv file
+```
+git clone https://github.com/labaran1/ST.git
+cd backend
+npm install
+
+
+```
+### Running 
+```
+npm run start:dev
+```
+
+
+## Technology / tools
+- Node.js
+- Nestjs
+- MongoDB
+
+
+
+
+
+
+
+## Author
+Labaran
