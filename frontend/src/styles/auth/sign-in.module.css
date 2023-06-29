@@ -1,0 +1,61 @@
+.SignInContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.signIn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 30%;
+  height: auto;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px 1px #ece7e7;
+  padding: 1rem;
+}
+
+.forgotLink a {
+  color: #0070c0;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.btnSignIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.btnSignIn button {
+  width: 50%;
+  align-self: center;
+  background: #0070c0;
+  color: #fff;
+  border-radius: 4px;
+  padding: 15px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.btnSignIn button:disabled {
+  background: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.26) !important;
+}
+.btnSignIn a {
+  text-decoration: none;
+  color: #0070c0;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  align-self: center;
+}
