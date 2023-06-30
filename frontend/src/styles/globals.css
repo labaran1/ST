@@ -19,3 +19,21 @@ body {
   width: 100%;
   margin: auto;
 }
+
+.medium-editor-toolbar-actions {
+  display: flex !important;
+  flex-direction: row;
+  gap: 1rem;
+  list-style-type: none;
+  margin-left: 1rem;
+}
+
+.medium-editor-toolbar-actions li {
+  display: flex;
+  background: none;
+}
+
+.medium-editor-toolbar-actions li button {
+  background: none;
+  border: none;
+}
