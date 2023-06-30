@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
-import Editor from 'react-medium-editor';
+// import Editor from 'react-medium-editor';
 // To be protected by auth
 
 export default function NewStory1() {
@@ -9,7 +9,7 @@ export default function NewStory1() {
   return (
     <main>
       <div style={{ display: 'flex' }}>
-        <Editor
+        {/* <Editor
           style={{
             border: '0.5px solid #ccc',
             borderRadius: '5px',
@@ -22,7 +22,7 @@ export default function NewStory1() {
           onClick={() => {
             if (title === 'Title') setTitle('');
           }}
-          onChange={(e) => {
+          onChange={(e: any) => {
             setTitle(e);
           }}
           options={{
@@ -31,11 +31,11 @@ export default function NewStory1() {
               allowMultiParagraphSelection: true,
             },
           }}
-        />
+        /> */}
       </div>
 
       <div style={{ display: 'flex' }}>
-        <Editor
+        {/* <Editor
           style={{
             border: '0.5px solid #ccc',
             borderRadius: '5px',
@@ -45,12 +45,12 @@ export default function NewStory1() {
           }}
           tag='pre'
           text={body}
-          onChange={(e) => {
+          onChange={(e: ChangeEvent) => {
             setBody(e);
           }}
           options={{
             toolbar: {
-              //   buttons: ['bold', 'italic', 'underline', 'anchor', 'h3', 'quote'],
+              buttons: ['bold', 'italic', 'underline', 'h3', 'quote'],
               diffLeft: 0,
               diffTop: -10,
               firstButtonClass: 'medium-editor-button-first',
@@ -60,7 +60,7 @@ export default function NewStory1() {
               static: false,
             },
           }}
-        />
+        /> */}
       </div>
     </main>
   );
