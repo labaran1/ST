@@ -6,7 +6,6 @@ import useSWR from 'swr';
 export default function Home() {
   const { data, error, isLoading } = useSWR('/blogs', fetcher);
 
-  console.log(data, 'blogs');
   return (
     <div>
       <div>{/* nav */}</div>
@@ -28,7 +27,7 @@ export default function Home() {
           <div
             style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
           >
-            {data.map((blog) => (
+            {data?.map((blog: any) => (
               <div
                 key={blog._id}
                 style={{
@@ -40,6 +39,7 @@ export default function Home() {
                   borderRadius: '5px',
                   boxShadow: '0 0 5px #ccc',
                   width: '40%',
+                  cursor: 'pointer',
                 }}
               >
                 <p style={{ fontWeight: 500 }}>{blog.title}</p>
@@ -47,6 +47,7 @@ export default function Home() {
                   {blog.body.substr(1, 100)}...
                 </p>
                 <div style={{ display: 'flex' }}>
+                  tags:
                   {blog.tags.map((tag: string) => (
                     <p key={tag} style={{ color: '#ddd' }}>
                       {tag}
